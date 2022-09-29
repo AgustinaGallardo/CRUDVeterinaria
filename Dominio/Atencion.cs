@@ -6,24 +6,23 @@ using System.Threading.Tasks;
 
 namespace CRUDveterinaria.Dominio
 {
-    internal class Atencion
+     class Atencion
     {
-       private double Importe { get { return Importe; } set { Importe = value; } }
-        public DateTime Fecha { get { return Fecha; } set { Fecha = value; } }
-       
+       public string Descripcion { get; set; }
+       public double Importe { get; set; }
+        public DateTime Fecha { get; set; }
 
-
-        public Atencion( double importe, DateTime fecha)
+        public Atencion(string descripcion,double importe, DateTime fecha)
         {
-            this.Fecha=fecha;
-            
+            this.Fecha=fecha;            
             this.Importe=importe;
-
+            this.Descripcion = descripcion;
         }
         public Atencion()
-        {
-            this.Importe=0;
-            this.Fecha=DateTime.Today;
+        {             
+            Importe=0;
+            Fecha=DateTime.Now;
+            Descripcion="";
         }
         public override string ToString()
         {

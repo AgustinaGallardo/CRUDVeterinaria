@@ -8,12 +8,16 @@ namespace CRUDveterinaria.Dominio
 {
     internal class TipoMascota
     {
-        int IdTipo { get; set; }
-        string NombreTipo { get; set; }
+        public int IdTipo { get; set; }
+        public string NombreTipo { get; set; }
         public TipoMascota(int id, string nombre)
         {
-            this.IdTipo = id;
-            this.NombreTipo = nombre;
+            IdTipo = id;
+            NombreTipo = nombre;
+        }
+        public override string ToString()
+        {
+            return NombreTipo;
         }
     }
 }

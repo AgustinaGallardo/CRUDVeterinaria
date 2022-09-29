@@ -1,0 +1,11 @@
+C:\Users\China\Documents\SEGUNDO CUATRIMESTRE\programacion II\CRUDveterinaria\bin\Debug\CRUDveterinaria.exe.config
+C:\Users\China\Documents\SEGUNDO CUATRIMESTRE\programacion II\CRUDveterinaria\bin\Debug\CRUDveterinaria.exe
+C:\Users\China\Documents\SEGUNDO CUATRIMESTRE\programacion II\CRUDveterinaria\bin\Debug\CRUDveterinaria.pdb
+C:\Users\China\Documents\SEGUNDO CUATRIMESTRE\programacion II\CRUDveterinaria\obj\Debug\CRUDveterinaria.csproj.AssemblyReference.cache
+C:\Users\China\Documents\SEGUNDO CUATRIMESTRE\programacion II\CRUDveterinaria\obj\Debug\CRUDveterinaria.csproj.SuggestedBindingRedirects.cache
+C:\Users\China\Documents\SEGUNDO CUATRIMESTRE\programacion II\CRUDveterinaria\obj\Debug\CRUDveterinaria.frmAltaMascota.resources
+C:\Users\China\Documents\SEGUNDO CUATRIMESTRE\programacion II\CRUDveterinaria\obj\Debug\CRUDveterinaria.Properties.Resources.resources
+C:\Users\China\Documents\SEGUNDO CUATRIMESTRE\programacion II\CRUDveterinaria\obj\Debug\CRUDveterinaria.csproj.GenerateResource.cache
+C:\Users\China\Documents\SEGUNDO CUATRIMESTRE\programacion II\CRUDveterinaria\obj\Debug\CRUDveterinaria.csproj.CoreCompileInputs.cache
+C:\Users\China\Documents\SEGUNDO CUATRIMESTRE\programacion II\CRUDveterinaria\obj\Debug\CRUDveterinaria.exe
+C:\Users\China\Documents\SEGUNDO CUATRIMESTRE\programacion II\CRUDveterinaria\obj\Debug\CRUDveterinaria.pdb

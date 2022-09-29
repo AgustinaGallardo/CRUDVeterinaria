@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CRUDveterinaria.Dominio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,10 @@ namespace CRUDveterinaria.Datos.Interfaz
 {
     internal interface IDaoMascota
     {
+        int ObtenerProximo();
+
+        List<TipoMascota> ObtenerTipos();
+
+        List<Cliente> ObtenerClientes();
     }
 }

@@ -1,0 +1,81 @@
+create database Veterinaria
+
+create table clientes
+(id_cliente int identity (1,1),
+nombre varchar(100),
+sexo bit
+constraint pk_clientes primary key (cod_cliente))
+
+create table tipos_mascotas
+(id_tipo int identity (1,1),
+descripcion varchar(30),
+constraint pk_tipo_mascotas primary key (id_tipo))
+
+create table mascotas
+(id_mascota int identity,
+nombre varchar(30),
+edad int, 
+id_tipo int,
+id_cliente int
+constraint pk_mascotas primary key (id_mascota)
+constraint fk_clientes foreign key (id_cliente)
+references clientes (cod_cliente),
+constraint fk_tipos foreign key (tipo)
+references tipos_mascotas (id_tipo))
+
+create table atenciones 
+(id_atencion int identity (1,1),
+fecha datetime, 
+descripcion varchar(1000),
+importe money,
+cod_mascota int
+constraint pk_atenciones primary key (id_atencion)
+constraint fk_mascotas foreign key (cod_mascota)
+references mascotas (cod_mascota))
+
+insert into tipos_mascotas values ('Perro')
+insert into tipos_mascotas values ('Gato')
+insert into tipos_mascotas values ('Araña')
+insert into tipos_mascotas values ('Iguana')
+select * from tipos_mascotas
+
+insert into clientes values ('Juan García', 1)
+insert into clientes values ('Ivana Lana', 2)
+insert into clientes values ('Lucía Pérez', 2)
+
+insert into mascotas values ('Gigi', 12, 2, 1)
+insert into mascotas values ('Luli', 4, 3, 3)
+insert into mascotas values ('Roco', 1, 1, 2)
+insert into mascotas values ('Alis', 5, 3, 1)
+insert into mascotas values ('Beto', 3, 1, 2)
+
+insert into atenciones values ('11/08/2022', 'Vacunación completa', 6000, 1)
+insert into atenciones values ('06/05/2022', 'Desparacitación', 1000, 2)
+insert into atenciones values ('01/07/2022', 'Dolor estomacal, se recetó protector gástrico', 7000, 3)
+insert into atenciones values ('01/01/2022', 'Vacunación completa', 6000, 4)
+
+go
+create procedure sp_atenciones_entre_fechas
+@fechamin datetime = '01/01/1900',
+@fechamax datetime = '01/01/2500'
+as
+select fecha, descripcion, m.nombre
+from atenciones a, mascotas m
+where a.cod_mascota=m.cod_mascota
+and fecha between @fechamin and @fechamax;
+
+exec sp_atenciones_entre_fechas
+
+go
+create procedure sp_cargar_tipos
+as
+select * from tipos_mascotas
+
+exec sp_cargar_tipos
+
+go
+create procedure sp_cargar_clientes
+as
+select * from clientes
+
+exec sp_cargar_clientes

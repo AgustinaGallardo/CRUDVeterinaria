@@ -6,30 +6,46 @@ using System.Threading.Tasks;
 
 namespace CRUDveterinaria.Dominio
 {
-    internal class Mascota
+     class Mascota
     {
-        int CodMascota { get; set; }
-        string Nombre { get; set; }
-        int Edad { get; set; }
-        TipoMascota Tipo { get; set; }
-        Cliente Cliente { get; set; }
-        List<Atencion> Atenciones { get; set; }
+        public int IdMascota { get; set; }
+        public string Nombre { get; set; }
+        public int Edad { get; set; }
+        public TipoMascota Tipo { get; set; }
+        public Cliente Cliente { get; set; }
+        public List<Atencion> Atenciones { get; set; }
 
-        public Mascota(int codMacota, string nombre, int edad, int tipo, Cliente cliente)
+        public Mascota(int IdMascota, string nombre, int edad, TipoMascota tipo, Cliente cliente,List<Atencion> atenciones)
         {
-            this.CodMascota=codMacota;
-            this.Nombre=nombre;
-            this.Tipo=tipo;
-            this.Edad=edad;
-            this.Cliente=cliente;
+            this.IdMascota = IdMascota;
+            this.Nombre = nombre;
+            this.Tipo = null;
+            this.Edad = edad;
+            this.Cliente = cliente;
+            Atenciones = atenciones;
         }
         public Mascota()
         {
-            CodMascota=0;
+            IdMascota=0;
             Nombre="";
             Edad = 0;
-            Tipo = 0;
-            Cliente = new Cliente();
+            Tipo = null;
+            Cliente = null;
+            Atenciones = new List<Atencion>();
+        }
+        public void AgregarAtencion(Atencion atencion)
+        {
+            Atenciones.Add(atencion);
+        }
+
+        public double CalcularTotal()
+        {
+            double total = 0;
+            foreach (Atencion item in Atenciones)
+            {
+                total += item.Importe;
+            }
+            return total;
         }
         public override string ToString()
         {

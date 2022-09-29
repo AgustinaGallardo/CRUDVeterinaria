@@ -8,33 +8,31 @@ namespace CRUDveterinaria.Dominio
 {
     internal class Cliente
     {
-          int CodCliente { get; set; }
-          string Nombre { get; set; }
-          string Sexo { get; set; }
-          int Dni { get; set; }      
-          string Apellido { get; set; }
+         public int IdCliente { get; set; }
+        public string Nombre { get; set; }
+        public int Sexo { get; set; } 
 
-
-
-        public Cliente(int codCliente, string nombre, string apellido, string sexo, int dni)
-        {
-            this.Apellido = apellido;
-            this.CodCliente = codCliente;
+        public Cliente(int IdCliente, string nombre,  int sexo)
+        {            
+            this.IdCliente = IdCliente;
             this.Nombre = nombre;
-            this.Sexo = sexo;
-            this.Dni = dni;
+            this.Sexo = 1;
+        }
+
+        public Cliente (int id,string nombre)
+        {
+            this.IdCliente = id;
+            this.Nombre = nombre;
         }
         public Cliente()
-        {
-            this.Apellido="";
+        {           
             this.Nombre="";
-            this.CodCliente=0;
-            this.Sexo="";
-            this.Dni=0;
+            this.IdCliente=0;
+            this.Sexo=1;           
         }
         public override string ToString()
         {
-            return "Cliente:" + Apellido + "," + Nombre + " -Dni: " + Dni;
+            return  Nombre ;
         }
     }
 }
