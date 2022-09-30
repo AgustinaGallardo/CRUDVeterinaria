@@ -53,27 +53,29 @@ namespace CRUDveterinaria.Datos
             return tabla;
         }
 
-        public bool ConformarMascota(Mascota oMascota)
+        public bool ConfirmarMascota(Mascota oMascota)
         {
             bool ok = true;
             SqlTransaction t = null;
             try
             {
-                t = cnn.BeginTransaction();
-                cnn.Open();
                 SqlCommand cmdMestro = new SqlCommand();
+                cnn.Open();
+                t = cnn.BeginTransaction();
+
+                cmdMestro.Transaction = t;
                 cmdMestro.Connection = cnn;
                 cmdMestro.CommandText = "sp_insertMascota";
                 cmdMestro.CommandType = CommandType.StoredProcedure;
-                cmdMestro.Transaction = t;
+               
 
                 cmdMestro.Parameters.AddWithValue("@nombre", oMascota.Nombre);
                 cmdMestro.Parameters.AddWithValue("@edad", oMascota.Edad);
-                cmdMestro.Parameters.AddWithValue("@id_tipo", oMascota.Tipo);
-                cmdMestro.Parameters.AddWithValue("@id_cliente", oMascota.Cliente);
+                cmdMestro.Parameters.AddWithValue("@id_tipo", oMascota.Tipo.IdTipo);
+                cmdMestro.Parameters.AddWithValue("@id_cliente", oMascota.Cliente.IdCliente);
 
                 SqlParameter OutPut = new SqlParameter();
-                OutPut.ParameterName= "id_mascota";
+                OutPut.ParameterName= "@id_mascota";
                 OutPut.DbType = DbType.Int32;
                 OutPut.Direction= ParameterDirection.Output;
 

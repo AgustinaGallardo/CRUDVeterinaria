@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CRUDveterinaria.Dominio
 {
-    internal class TipoMascota
+     class TipoMascota
     {
         public int IdTipo { get; set; }
         public string NombreTipo { get; set; }

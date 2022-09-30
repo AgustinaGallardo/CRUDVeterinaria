@@ -100,7 +100,7 @@ namespace CRUDveterinaria
             {
                 MessageBox.Show("Tiene que agregar un nombre de mascota", "ERROR", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
             }
-            if (txtEdad.Text == String.Empty)
+            if (txtEdad.Text == string.Empty)
             {
                 MessageBox.Show("Tiene que agregar una edad de mascota", "ERROR", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
             }
@@ -108,10 +108,7 @@ namespace CRUDveterinaria
             {
                 MessageBox.Show("Tiene que seleccionar un tipo de mascota", "ERROR", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
             }
-            if (cboCliente.SelectedIndex == -1)
-            {
-                MessageBox.Show("Tiene que seleccionar un dueño de mascota", "ERROR", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
-            }
+            
             GuardarAtencion();
         }
 
@@ -124,17 +121,16 @@ namespace CRUDveterinaria
             TipoMascota t = (TipoMascota)cboTipoMas.SelectedItem;
             nueva.Tipo=t;
 
-            if (Helper.ObtenerInstancia().ConformarMascota(nueva))
+            if (Helper.ObtenerInstancia().ConfirmarMascota(nueva))
             {
                 MessageBox.Show("Se inserto con exito la mascota", "CONFIRMADO", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
             }
             else
             {
-                MessageBox.Show("Tiene que seleccionar un dueño de mascota", "ERROR", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                MessageBox.Show("No se pudo insertar la mascota", "ERROR", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
             }
             LimpiarCampos();
         }
-
         private void LimpiarCampos()
         {
             txtAtencion.Text = "";
