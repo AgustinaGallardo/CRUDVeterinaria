@@ -47,6 +47,10 @@ namespace CRUDveterinaria.Dominio
             }
             return total;
         }
+        public void QuitarDetalle(int indice_detalle)
+        {
+            Atenciones.RemoveAt(indice_detalle);
+        }
         public override string ToString()
         {
             return "Mascota: " + Nombre + " Edad: " + Edad;

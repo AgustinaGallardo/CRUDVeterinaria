@@ -44,15 +44,15 @@
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.txtImporte = new System.Windows.Forms.TextBox();
             this.dgvMascotas = new System.Windows.Forms.DataGridView();
+            this.colAtencion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colImporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAccion = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.colAtencion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colImporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAccion = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMascotas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -195,6 +195,34 @@
             this.dgvMascotas.ReadOnly = true;
             this.dgvMascotas.Size = new System.Drawing.Size(641, 150);
             this.dgvMascotas.TabIndex = 9;
+            this.dgvMascotas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMascotas_CellContentClick);
+            // 
+            // colAtencion
+            // 
+            this.colAtencion.HeaderText = "Atencion";
+            this.colAtencion.Name = "colAtencion";
+            this.colAtencion.ReadOnly = true;
+            this.colAtencion.Width = 250;
+            // 
+            // colImporte
+            // 
+            this.colImporte.HeaderText = "Importe";
+            this.colImporte.Name = "colImporte";
+            this.colImporte.ReadOnly = true;
+            // 
+            // colFecha
+            // 
+            this.colFecha.HeaderText = "Fecha";
+            this.colFecha.Name = "colFecha";
+            this.colFecha.ReadOnly = true;
+            // 
+            // colAccion
+            // 
+            this.colAccion.HeaderText = "Accion";
+            this.colAccion.Name = "colAccion";
+            this.colAccion.ReadOnly = true;
+            this.colAccion.Text = "Eliminar";
+            this.colAccion.UseColumnTextForButtonValue = true;
             // 
             // dtpFecha
             // 
@@ -240,33 +268,6 @@
             this.label9.Size = new System.Drawing.Size(31, 13);
             this.label9.TabIndex = 20;
             this.label9.Text = "Total";
-            // 
-            // colAtencion
-            // 
-            this.colAtencion.HeaderText = "Atencion";
-            this.colAtencion.Name = "colAtencion";
-            this.colAtencion.ReadOnly = true;
-            this.colAtencion.Width = 250;
-            // 
-            // colImporte
-            // 
-            this.colImporte.HeaderText = "Importe";
-            this.colImporte.Name = "colImporte";
-            this.colImporte.ReadOnly = true;
-            // 
-            // colFecha
-            // 
-            this.colFecha.HeaderText = "Fecha";
-            this.colFecha.Name = "colFecha";
-            this.colFecha.ReadOnly = true;
-            // 
-            // colAccion
-            // 
-            this.colAccion.HeaderText = "Accion";
-            this.colAccion.Name = "colAccion";
-            this.colAccion.ReadOnly = true;
-            this.colAccion.Text = "Eliminar";
-            this.colAccion.UseColumnTextForButtonValue = true;
             // 
             // frmAltaMascota
             // 

@@ -142,6 +142,16 @@ namespace CRUDveterinaria
             txtTotal.Text="";
             dgvMascotas.Rows.Clear();   
         }
+
+        private void dgvMascotas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(dgvMascotas.CurrentCell.ColumnIndex == 3)
+            {
+                nueva.QuitarDetalle(dgvMascotas.CurrentRow.Index);
+                dgvMascotas.Rows.Remove(dgvMascotas.CurrentRow);
+                nueva.CalcularTotal();                 
+            }
+        }
     }
 
 }
